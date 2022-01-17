@@ -44,16 +44,45 @@ function generatePassword() {
     return "Please Select at least 1 criteria, Try Again";
   }
 
-  passwordCriteriaCheck = 1;
+  passwordCriteriaCheck = 0;
   do {
-    
+
     // Password generation
     for (var i = 0; i < passwordLength; i++) {
       password = password + passwordPool[Math.floor((Math.random() * passwordPool.length))];
     }
 
+    // Validates that password contains at least one of each criteria
+    var lowerValidation = false;
+    var upperValidation = false;
+    var numerialValidation = false;
+    var specialValidation = false;
+
+    // Checks each index of the password for existence of each type
+    for (var x = 0; x < password.length; x++) {
+
+      if (lowercaseArray.includes(password[x])) {
+        lowerValidation = true;
+      }
+      if (uppercaseArray.includes(password[x])) {
+        upperValidation = true;
+      }
+      if (numerialsArray.includes(password[x])) {
+        numerialValidation = true;
+      }
+      if (specialsArray.includes(password[x])) {
+        specialValidation = true;
+      }
+    }
+
+    if (lowerValidation == lowerCheck && upperValidation == upperCheck && numerialValidation == numerialCheck && specialValidation == specialCheck) {
+      passwordCriteriaCheck = 1;
+    }
+
+
   }
   while (passwordCriteriaCheck == 0);
+
   return password;
 }
 
