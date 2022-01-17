@@ -21,22 +21,22 @@ function generatePassword() {
 
   var lowerCheck = confirm("Do you want lowercase letters in your password?");
   if (lowerCheck == true){
-    passwordPool.push(lowercaseArray);
+    passwordPool = passwordPool.concat(lowercaseArray);
   }
 
   var upperCheck = confirm("Do you want uppercase letters in your password?");
   if (upperCheck == true){
-    passwordPool.push(uppercaseArray);
+    passwordPool = passwordPool.concat(uppercaseArray);
   }
 
   var numerialCheck = confirm("Do you want numbers in your password?");
   if (numerialCheck == true){
-    passwordPool.push(numerialsArray);
+    passwordPool = passwordPool.concat(numerialsArray);
   }
 
   var specialCheck = confirm("Do you want special characters in your password?");
   if (specialCheck == true){
-    passwordPool.push(specialsArray);
+    passwordPool = passwordPool.concat(specialsArray);
   }
 
 console.log(passwordPool);
