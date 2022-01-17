@@ -44,11 +44,16 @@ function generatePassword() {
     return "Please Select at least 1 criteria, Try Again";
   }
 
-  // Password generation
-  for (var i = 0; i < passwordLength; i++) {
-    password = password + passwordPool[Math.floor((Math.random() * passwordPool.length))];
-  }
+  passwordCriteriaCheck = 1;
+  do {
+    
+    // Password generation
+    for (var i = 0; i < passwordLength; i++) {
+      password = password + passwordPool[Math.floor((Math.random() * passwordPool.length))];
+    }
 
+  }
+  while (passwordCriteriaCheck == 0);
   return password;
 }
 
