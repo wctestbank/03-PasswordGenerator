@@ -17,8 +17,6 @@ Javascript has been added to include:
 
 https://wctestbank.github.io/03-PasswordGenerator/
 
-The following image demonstrates the application functionality:
-
 
 ## Example Application screenshot
 
