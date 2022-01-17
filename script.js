@@ -47,6 +47,8 @@ function generatePassword() {
   passwordCriteriaCheck = 0;
   do {
 
+    password = "";
+
     // Password generation
     for (var i = 0; i < passwordLength; i++) {
       password = password + passwordPool[Math.floor((Math.random() * passwordPool.length))];
